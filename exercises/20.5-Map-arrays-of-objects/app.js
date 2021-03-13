@@ -7,7 +7,11 @@ let people = [
 ];
 
 let simplifier = function(person){
-	return person.name;
-};
+    var age_dt = new Date(Date.now() - person.birthDate.getTime());
+    var year = age_dt.getUTCFullYear();
+    var age = Math.abs(year - 1970);
+
+	return ("Hello, my name is " + person.name + " and I am " + age + " years old" ) ;
+}; 
 
 console.log(people.map(simplifier));
